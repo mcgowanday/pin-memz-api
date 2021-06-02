@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# EMAIL="mac@gmail.com" PASSWORD="mac" sh curl-scripts/auth/sign-in.sh
+
+
 API="http://localhost:4741"
 URL_PATH="/sign-in"
 
