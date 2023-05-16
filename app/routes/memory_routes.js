@@ -48,6 +48,11 @@ router.get('/memories', requireToken, (req, res, next) => {
 router.get('/memories/:id', requireToken, (req, res, next) => {
   // req.params.id will be set based on the `:id` in the route
   Memory.findById(req.params.id)
+    .populate({
+      path: 'owner',
+      select: 'email'
+    })
+
     .then(handle404)
     // if `findById` is succesful, respond with 200 and "memory" JSON
     .then(memory => res.status(200).json({ memory: memory.toObject() }))

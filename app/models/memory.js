@@ -30,7 +30,7 @@ const memorySchema = new mongoose.Schema({
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'User', // This tells Mongoose to associate this field with the User model
     required: true
   }
 }, {
